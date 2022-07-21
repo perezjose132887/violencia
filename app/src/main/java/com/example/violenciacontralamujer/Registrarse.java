@@ -5,28 +5,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class Registrarse extends AppCompatActivity {
 
-    Button register;
-
+    TextView login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_registrarse);
 
-        register=(Button) findViewById(R.id.btnRegister);
+        login=(TextView) findViewById(R.id.tvLogin);
 
-
-        register.setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(MainActivity.this,Registrarse.class);
+                Intent intent =new Intent(Registrarse.this,MainActivity.class);
                 startActivity(intent);
             }
         });
     }
-
-
 }
