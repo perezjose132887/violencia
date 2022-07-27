@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button register;
+    Button register,login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +17,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         register=(Button) findViewById(R.id.btnRegister);
+        login=(Button) findViewById(R.id.btnLogin);
 
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(MainActivity.this,Contactos.class);
+                startActivity(intent);
+            }
+        });
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
