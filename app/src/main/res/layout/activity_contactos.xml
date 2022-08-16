@@ -22,7 +22,7 @@
         app:srcCompat="@drawable/unido"
         android:layout_gravity="center"
         android:scaleType="fitCenter"
-        android:layout_margin="50dp"/>
+        android:layout_margin="30dp"/>
 
     <EditText
         android:id="@+id/etContacto"
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="170dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="Contacto"
         android:inputType="textPersonName"
@@ -50,31 +50,59 @@
             android:inputType="phone"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
-            android:layout_marginBottom="32dp"/>
+            android:layout_marginBottom="2dp"/>
 
         <ImageButton
             android:id="@+id/ibContacto"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:src="@drawable/ic_baseline_person"
             android:scaleType="fitCenter"
             android:backgroundTint="#00AF80"
-            android:layout_marginRight="32dp"
-            android:layout_marginLeft="32dp"
+            android:layout_marginRight="10dp"
+
             android:background="@drawable/button_social"/>
 
+
+        <EditText
+            android:id="@+id/etId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginRight="32dp"
+            android:inputType="textPersonName"
+
+            android:text="" />
     </LinearLayout>
 
     <Button
         android:id="@+id/btnGuardar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Guardar"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/button_rounded"
-        android:backgroundTint="#017A6D"/>
+        android:backgroundTint="#017A6D"
+        android:text="Guardar" />
+
+    <Button
+        android:id="@+id/btnEliminarTabla"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_rounded"
+        android:backgroundTint="#017A6D"
+        android:text="Eliminar Lista" />
+
+    <ListView
+        android:id="@+id/lvListaContactos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"/>
 
 
 </LinearLayout>
