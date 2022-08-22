@@ -34,7 +34,7 @@ public class Contactos extends AppCompatActivity{
     EditText etcontacto,ettelefono;
     ImageButton contact;
     static final int PICK_CONTACT_REQUEST=1;
-    Button guardar;
+    Button guardar,continuar;
     Button eliminarLista;
     ListView lvListaContactos;
 
@@ -57,7 +57,19 @@ public class Contactos extends AppCompatActivity{
         guardar=(Button) findViewById(R.id.btnGuardar);
         lvListaContactos=(ListView)findViewById(R.id.lvListaContactos);
         eliminarLista=(Button) findViewById(R.id.btnEliminarTabla);
+        continuar=(Button) findViewById(R.id.btnContinuar);
 
+
+
+        //Click para segui avanzando de contactos a alerta
+        continuar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Contactos.this,AlertaActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
 
         //Selecciona un contacto del celular
