@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                         public void onResponse(String response) {
                             if(!response.isEmpty()){
                                 guardarPreferencias();
-                                Intent intent=new Intent(getApplicationContext(),Contactos.class);
+                                Intent intent=new Intent(getApplicationContext(),InsertarDenunciante.class);
                                 startActivity(intent);
                                 finish();
                             }else{

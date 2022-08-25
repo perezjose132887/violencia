@@ -62,7 +62,7 @@ public class Registrarse extends AppCompatActivity {
         final ProgressDialog progressBar=new ProgressDialog(this);
         progressBar.setMessage("cargando");
 
-        if(eemail.isEmpty()){
+        if(eemail.isEmpty() && ppassword.isEmpty()){
             email.setError("Complete los campos");
             return;
         }else{
