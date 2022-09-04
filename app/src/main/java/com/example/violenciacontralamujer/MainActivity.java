@@ -104,8 +104,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void recuperarPrefencias(){
         SharedPreferences preferences=getSharedPreferences("preferenciasLogin",Context.MODE_PRIVATE);
-        etEmail.setText(preferences.getString("email","micorreo@gmail.com"));
-        etPassword.setText(preferences.getString("password","123456"));
+        etEmail.setText(preferences.getString("email",""));
+        etPassword.setText(preferences.getString("password",""));
     }
 
 

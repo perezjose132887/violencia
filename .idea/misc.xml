@@ -6,13 +6,22 @@
         <entry key="..\:/Users/PEREZ/Documents/Android Studio/ViolenciaContraLaMujer/app/src/main/res/drawable/button_rounded.xml" value="0.2115" />
         <entry key="..\:/Users/PEREZ/Documents/Android Studio/ViolenciaContraLaMujer/app/src/main/res/drawable/button_rounded_border.xml" value="0.1765" />
         <entry key="..\:/Users/PEREZ/Documents/Android Studio/ViolenciaContraLaMujer/app/src/main/res/drawable/button_social.xml" value="0.1765" />
-        <entry key="..\:/Users/PEREZ/Documents/Android Studio/ViolenciaContraLaMujer/app/src/main/res/layout/activity_alerta.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/PEREZ/Documents/Android Studio/ViolenciaContraLaMujer/app/src/main/res/layout/activity_alerta.xml" value="0.1" />
         <entry key="..\:/Users/PEREZ/Documents/Android Studio/ViolenciaContraLaMujer/app/src/main/res/layout/activity_contactos.xml" value="0.2" />
         <entry key="..\:/Users/PEREZ/Documents/Android Studio/ViolenciaContraLaMujer/app/src/main/res/layout/activity_insertar_denunciante.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/PEREZ/Documents/Android Studio/ViolenciaContraLaMujer/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/PEREZ/Documents/Android Studio/ViolenciaContraLaMujer/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/PEREZ/Documents/Android Studio/ViolenciaContraLaMujer/app/src/main/res/layout/activity_presentacion.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/PEREZ/Documents/Android Studio/ViolenciaContraLaMujer/app/src/main/res/layout/activity_registrarse.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/PEREZ/Documents/Android Studio/ViolenciaContraLaMujer/app/src/main/res/layout/fragment_alerta.xml" value="0.17527173913043478" />
+        <entry key="..\:/Users/PEREZ/Documents/Android Studio/ViolenciaContraLaMujer/app/src/main/res/layout/fragment_first.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/PEREZ/Documents/Android Studio/ViolenciaContraLaMujer/app/src/main/res/layout/fragment_llamadas_emergencia.xml" value="0.17527173913043478" />
+        <entry key="..\:/Users/PEREZ/Documents/Android Studio/ViolenciaContraLaMujer/app/src/main/res/layout/fragment_menu.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/PEREZ/Documents/Android Studio/ViolenciaContraLaMujer/app/src/main/res/layout/fragment_preguntas_frecuentes.xml" value="0.17527173913043478" />
+        <entry key="..\:/Users/PEREZ/Documents/Android Studio/ViolenciaContraLaMujer/app/src/main/res/layout/fragment_second.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/PEREZ/Documents/Android Studio/ViolenciaContraLaMujer/app/src/main/res/layout/fragment_third.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/PEREZ/Documents/Android Studio/ViolenciaContraLaMujer/app/src/main/res/menu/boton_navegacion.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/PEREZ/Documents/Android Studio/ViolenciaContraLaMujer/app/src/main/res/menu/bottom_navigation.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

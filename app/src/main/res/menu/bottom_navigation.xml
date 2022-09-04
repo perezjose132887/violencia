@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/firstFragment"
+        android:icon="@drawable/alerta"
+        android:title="Alerta"/>
+
+    <item
+        android:id="@+id/secondFragment"
+        android:icon="@drawable/emergencia"
+        android:title="Emergencias"/>
+
+    <item
+        android:id="@+id/thirdFragment"
+        android:icon="@drawable/pregunta"
+        android:title="Preguntas"/>
+
+    <item
+        android:id="@+id/fourthFragment"
+        android:icon="@drawable/menu"
+        android:title="Menu"/>
+</menu>
