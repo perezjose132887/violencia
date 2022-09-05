@@ -42,7 +42,7 @@ public class InsertarDenunciante extends AppCompatActivity {
         insertarDatos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                insertarDatos("http://192.168.1.100/violencia/insertarDenunciante.php");
+                insertarDatos("http://192.168.1.104/violencia/insertarDenunciante.php");
             }
         });
 
@@ -57,9 +57,9 @@ public class InsertarDenunciante extends AppCompatActivity {
         apellidoMaterno=etApellidoMaterno.getText().toString().trim();
         telefono=etTelefono.getText().toString().trim();
 
-        if(ci.isEmpty() && nombre.isEmpty() && apellidoPaterno.isEmpty() && apellidoMaterno.isEmpty() && telefono.isEmpty()){
-            Toast.makeText(getApplicationContext(), "No se permiten campos vacios", Toast.LENGTH_SHORT).show();
-        }else{
+        //if(ci.isEmpty() && nombre.isEmpty() && apellidoPaterno.isEmpty() && apellidoMaterno.isEmpty() && telefono.isEmpty()){
+        //    Toast.makeText(getApplicationContext(), "No se permiten campos vacios", Toast.LENGTH_SHORT).show();
+        //}else{
             StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
@@ -88,7 +88,7 @@ public class InsertarDenunciante extends AppCompatActivity {
             };
             RequestQueue requestQueue= Volley.newRequestQueue(this);
             requestQueue.add(stringRequest);
-        }
+        //}
     }
 
 

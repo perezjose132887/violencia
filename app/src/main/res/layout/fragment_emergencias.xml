@@ -1,19 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".EmergenciasFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:fontFamily="sans-serif-black"
-        android:textColor="@color/green_light"
-        android:textSize="40sp"
-        android:text="Llamadas de Emergencia" />
+        android:orientation="vertical">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/green_light"
+            android:textSize="40sp"
+            android:text="Llamadas de Emergencia" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#5D8679">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Radio Patrullas de la Policía Boliviana"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:textSize="20sp"
+                android:textColor="#FF0000"/>
+
+            <ImageButton
+                android:id="@+id/ibPatrulla"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                android:src="@drawable/patrulla" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Click en la imagen para reailzar una llamada"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:textSize="15sp"
+                android:textColor="#000000"/>
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tiene la misión específica de la defensa de la sociedad y la conservación del orden público, mediante el cumplimiento de las leyes en el territorio nacional"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#3E6F6B">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bomberos"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:textSize="20sp"
+                android:textColor="#FF0000"/>
+
+            <ImageButton
+                android:id="@+id/ibBomberos"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                android:src="@drawable/bomberos" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Click en la imagen para reailzar una llamada"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:textSize="15sp"
+                android:textColor="#000000"/>
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Salvar vidas y proteger bienes inmuebles con acciones oportunas y eficientes en la lucha contra el fuego, atención prehospitalaria, rescate y salvamento, atender en caso de emergencias por desastres naturales y/o producidos por el ser humano."
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:textSize="15sp"/>
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#5D8679">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Organismo Operativo de Transito"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:textSize="20sp"
+                android:textColor="#FF0000"/>
+
+            <ImageButton
+                android:id="@+id/ibTransito"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                android:src="@drawable/transito" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Click en la imagen para reailzar una llamada"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:textSize="15sp"
+                android:textColor="#000000"/>
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Garantizar la fluidez y seguridad del tránsito terrestre de personas y vehículos y del transporte público y privado mediante la planeación, organización y control del tránsito municipal."
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:textSize="15sp"/>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

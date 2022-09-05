@@ -67,7 +67,7 @@ public class Registrarse extends AppCompatActivity {
             return;
         }else{
             progressBar.show();
-            StringRequest request = new StringRequest(Request.Method.POST, "http://192.168.1.100/violencia/insertarUsuario.php", new Response.Listener<String>() {
+            StringRequest request = new StringRequest(Request.Method.POST, "http://192.168.1.104/violencia/insertarUsuario.php", new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
                     if (response.equalsIgnoreCase("registro correctamente")) {

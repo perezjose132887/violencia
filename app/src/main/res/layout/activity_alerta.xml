@@ -7,16 +7,7 @@
     tools:context=".AlertaActivity">
 
 
-    <Button
-        android:id="@+id/btnCerrarSesion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/button_rounded"
-        android:backgroundTint="#017A6D"
-        android:text="Cerrar Sesion" />
+
 
     <FrameLayout
         android:id="@+id/frame_container"

@@ -41,6 +41,6 @@ public class ContactosModel {
 
     @Override
     public String toString() {
-        return contacto+" - " + telefono;
+        return id+" - "+contacto+" - " + telefono;
     }
 }

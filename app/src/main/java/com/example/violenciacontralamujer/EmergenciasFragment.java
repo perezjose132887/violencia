@@ -1,5 +1,7 @@
 package com.example.violenciacontralamujer;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,6 +27,8 @@ public class EmergenciasFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    ImageButton patrulla,bombero,transito;
+    View vista;
     public EmergenciasFragment() {
         // Required empty public constructor
     }
@@ -58,7 +63,41 @@ public class EmergenciasFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_emergencias, container, false);
+        vista =inflater.inflate(R.layout.fragment_emergencias, container, false);
+        patrulla=(ImageButton) vista.findViewById(R.id.ibPatrulla);
+        bombero=(ImageButton) vista.findViewById(R.id.ibBomberos);
+        transito=(ImageButton) vista.findViewById(R.id.ibTransito);
+
+        patrulla.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String phone= "tel:110";
+                Intent intent=new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse(phone));
+                startActivity(intent);
+            }
+        });
+
+        bombero.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String phone= "tel:119";
+                Intent intent=new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse(phone));
+                startActivity(intent);
+            }
+        });
+
+        transito.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String phone= "tel:111";
+                Intent intent=new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse(phone));
+                startActivity(intent);
+            }
+        });
+
+        return vista;
     }
 }

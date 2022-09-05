@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 email=etEmail.getText().toString().trim();
                 password=etPassword.getText().toString().trim();
                 if(!email.isEmpty() && !password.isEmpty()){
-                    StringRequest stringRequest=new StringRequest(Request.Method.POST, "http://192.168.1.100/violencia/verificarLogin.php", new Response.Listener<String>() {
+                    StringRequest stringRequest=new StringRequest(Request.Method.POST, "http://192.168.1.104/violencia/verificarLogin.php", new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
                             if(!response.isEmpty()){

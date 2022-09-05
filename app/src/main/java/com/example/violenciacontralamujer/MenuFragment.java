@@ -1,5 +1,8 @@
 package com.example.violenciacontralamujer;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +10,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +28,10 @@ public class MenuFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    View vista;
+    Button cerrar;
+
+
 
     public MenuFragment() {
         // Required empty public constructor
@@ -58,7 +67,23 @@ public class MenuFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_menu, container, false);
+        vista=inflater.inflate(R.layout.fragment_menu, container, false);
+        cerrar=(Button) vista.findViewById(R.id.btnCerrarSesion);
+
+        cerrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    SharedPreferences preferences= getActivity().getSharedPreferences("preferenciasLogin", Context.MODE_PRIVATE);
+                    preferences.edit().clear().commit();
+                    Intent intent=new Intent(getContext(),MainActivity.class);
+                    startActivity(intent);
+                    getActivity().finish();
+                }catch (Exception e){
+                    Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        return vista;
     }
 }
