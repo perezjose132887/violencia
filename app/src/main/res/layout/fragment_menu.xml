@@ -18,6 +18,17 @@
         android:text="Menu" />
 
     <Button
+        android:id="@+id/btnRegistrarDenuncia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_rounded"
+        android:backgroundTint="#017A6D"
+        android:text="REGISTRAR DENUNCIA" />
+
+    <Button
         android:id="@+id/btnCerrarSesion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

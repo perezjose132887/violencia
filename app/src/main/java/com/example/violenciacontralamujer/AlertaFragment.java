@@ -100,7 +100,7 @@ public class AlertaFragment extends Fragment {
                 }
                 try{
                     SmsManager smsManager=SmsManager.getDefault();
-                    smsManager.sendTextMessage("63997464",null,"blabla",null,null);
+                    smsManager.sendTextMessage("63997464",null,"HolaMundo",null,null);
                     Toast.makeText(getContext(), "SmsEnviado", Toast.LENGTH_SHORT).show();
                 }
                 catch (Exception e){

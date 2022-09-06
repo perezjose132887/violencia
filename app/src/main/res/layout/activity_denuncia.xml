@@ -5,74 +5,68 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
+    tools:context=".DenunciaActivity"
     android:background="#202732">
 
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        app:srcCompat="@drawable/unido"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:scaleType="fitCenter"
-        android:layout_margin="50dp"/>
+        android:text="REGISTRAR DENUNCIA"
+        android:textColor="#017A6D"
+        android:textSize="30sp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"/>
 
     <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/etCi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:text=""
-        android:hint="Correo Electronico"
+        android:hint="Cedula Identidad"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:backgroundTint="#017A6D"/>
+
+    <Spinner
+        android:id="@+id/spSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="32dp"
         android:backgroundTint="#017A6D"/>
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/etDeclaracion"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="139dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="32dp"
         android:ems="10"
-        android:inputType="textPassword"
-        android:hint="Contraseña"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="32dp"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:hint="Declaracion..."
         android:backgroundTint="#017A6D"/>
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnInsertarDenuncia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="INICIAR SESION"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/button_rounded"
-        android:backgroundTint="#017A6D"/>
-    <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="REGISTRARSE"
+        android:text="REGISTRAR DENUNCIA"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/button_rounded"
         android:backgroundTint="#017A6D"/>
-
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/google"
-        android:scaleType="fitCenter"
-        android:layout_gravity="center"
-        android:padding="10dp"
-        android:background="@drawable/button_social"/>
-
 
 </LinearLayout>

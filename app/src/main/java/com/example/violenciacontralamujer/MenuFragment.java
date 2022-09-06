@@ -29,7 +29,7 @@ public class MenuFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     View vista;
-    Button cerrar;
+    Button cerrar,registrarDenuncia;
 
 
 
@@ -69,6 +69,7 @@ public class MenuFragment extends Fragment {
                              Bundle savedInstanceState) {
         vista=inflater.inflate(R.layout.fragment_menu, container, false);
         cerrar=(Button) vista.findViewById(R.id.btnCerrarSesion);
+        registrarDenuncia=(Button) vista.findViewById(R.id.btnRegistrarDenuncia);
 
         cerrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +83,15 @@ public class MenuFragment extends Fragment {
                 }catch (Exception e){
                     Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+
+        registrarDenuncia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getContext(),DenunciaActivity.class);
+                startActivity(intent);
             }
         });
         return vista;
