@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:fontFamily="sans-serif-black"
         android:textColor="@color/green_light"
         android:textSize="40sp"
@@ -23,9 +23,9 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="10dp"
         android:adjustViewBounds="false"
         android:background="@drawable/button_social"
 
@@ -40,7 +40,36 @@
         android:textAlignment="center"
         android:textSize="20sp"
         android:textColor="#FF0000"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
         android:text="Click en la imagen si sufre de violencia" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etLatitud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="8"
+            android:layout_marginLeft="32dp"
+            android:inputType="textPersonName"
+            android:text="" />
+
+        <EditText
+            android:id="@+id/etLongitud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="8"
+            android:layout_marginRight="32dp"
+            android:inputType="textPersonName"
+            android:text="" />
+
+    </LinearLayout>
 
 
 </LinearLayout>

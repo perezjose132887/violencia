@@ -1,14 +1,23 @@
 package com.example.violenciacontralamujer;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.os.Message;
@@ -17,10 +26,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.violenciacontralamujer.Model.ContactosModel;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 
 import java.util.ArrayList;
 
@@ -42,9 +55,14 @@ public class AlertaFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    //Todo esto es para los contactos
     View vista;
     ImageButton llamar;
     ArrayList<ContactosModel> listaContactos;
+
+    //To esto es para mandar coordenadas
+    EditText latitud,longitud;
+
 
 
     public AlertaFragment() {
@@ -87,21 +105,98 @@ public class AlertaFragment extends Fragment {
                              Bundle savedInstanceState) {
         vista=inflater.inflate(R.layout.fragment_alerta, container, false);
         llamar=(ImageButton) vista.findViewById(R.id.btnAyuda);
+        latitud=(EditText) vista.findViewById(R.id.etLatitud);
+        longitud=(EditText) vista.findViewById(R.id.etLongitud);
+
+
+
         AdminSQLiteOpenHelper admin= new AdminSQLiteOpenHelper(getContext(),"administracion",null,1);
+
         llamar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String phone= "tel:911";
-                Intent intent=new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse(phone));
-                startActivity(intent);
+
+                //Permiso para enviar mensajes de ayuda
                 if(ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED){
                     ActivityCompat.requestPermissions(getActivity(),new String[]{Manifest.permission.SEND_SMS},1);
                 }
+                //Permiso para enviar coordenadas
+                int permissionCheck=ContextCompat.checkSelfPermission(getActivity(),Manifest.permission.ACCESS_FINE_LOCATION);
+                if(permissionCheck==PackageManager.PERMISSION_DENIED){
+                    if(ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),Manifest.permission.ACCESS_FINE_LOCATION)){
+
+                    }else{
+                        ActivityCompat.requestPermissions(getActivity(),new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},1);
+                    }
+                }
                 try{
-                    SmsManager smsManager=SmsManager.getDefault();
-                    smsManager.sendTextMessage("63997464",null,"HolaMundo",null,null);
+
+
+
+
+                    LocationManager locationManager=(LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+                    LocationListener locationListener=new LocationListener() {
+                        @Override
+                        public void onLocationChanged(@NonNull Location location) {
+                            latitud.setText(""+location.getLatitude());
+                            longitud.setText(""+location.getLongitude());
+                        }
+                        public void onStatusChanged(String provider, int status, Bundle extras){}
+                        public void onProviderEnabled(String provider){}
+                        public void onProviderDisabled(String provider){}
+
+                    };
+
+                    locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,0,0,locationListener);
+
+
+
+
+
+
+
+
+
+                    SQLiteDatabase BaseDeDatos=admin.getWritableDatabase();
+                    Cursor cursor= BaseDeDatos.rawQuery("SELECT * FROM contactos",null);
+                    ArrayList<ContactosModel> lista=new ArrayList<ContactosModel>();
+                    while(cursor.moveToNext()){
+                        ContactosModel cm=new ContactosModel();
+                        cm.setId(cursor.getInt(0));
+                        cm.setContacto(cursor.getString(1));
+                        cm.setTelefono(cursor.getString(2));
+                        lista.add(cm);
+                    }
+
+
+                    String mensajeAyuda="Ayuda: \n https://maps.google.com/?q="+latitud.getText().toString().trim()+","+longitud.getText().toString().trim();
+
+                    for(int i=0; i<lista.size(); i++){
+
+
+                        //Envia mensajes a todos los contactos seleccionados
+                        SmsManager smsManager=SmsManager.getDefault();
+                        smsManager.sendTextMessage(lista.get(i).getTelefono(),null,mensajeAyuda,null,null);
+
+
+                    }
                     Toast.makeText(getContext(), "SmsEnviado", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), mensajeAyuda, Toast.LENGTH_SHORT).show();
+
+
+
+
+                    String phone= "tel:911";
+                    Intent intent=new Intent(Intent.ACTION_DIAL);
+                    intent.setData(Uri.parse(phone));
+                    startActivity(intent);
+
+
+
+
+
+
+
                 }
                 catch (Exception e){
                     Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
